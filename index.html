@@ -48,12 +48,12 @@
       height: auto;
     }
 
-    /* GIFs laterales + superpuestos juntos en fila */
+    /* Fila de GIFs laterales y superpuestos (dos de cada uno) */
     .gif-row {
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      flex-wrap: wrap; /* para móviles pequeños se acomoden abajo */
+      flex-wrap: wrap; /* para móviles se acomoden verticalmente */
       width: 100%;
       margin: 10px 0;
     }
@@ -93,12 +93,15 @@
     <img src="images/gif.gif" alt="Flores Amarillas">
   </div>
 
-  <!-- GIFs laterales y superpuestos en fila -->
+  <!-- Fila de GIFs: 2 de gif(6) y 2 de gif(3) -->
   <div class="gif-row">
-    <img src="images/gif(6).gif" alt="Decoración superpuesta">
-    <img src="images/gif(3).gif" alt="Decoración lateral">
+    <img src="images/gif(6).gif" alt="Decoración superpuesta 1">
+    <img src="images/gif(6).gif" alt="Decoración superpuesta 2">
+    <img src="images/gif(3).gif" alt="Decoración lateral 1">
+    <img src="images/gif(3).gif" alt="Decoración lateral 2">
   </div>
 
   <div class="grass"></div>
 </body>
 </html>
+
