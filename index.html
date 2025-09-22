@@ -8,111 +8,129 @@
     body {
       margin: 0;
       padding: 0;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      background: url("images/gif(1).gif") no-repeat center center/cover;
+      min-height: 100vh;
       font-family: "Arial", sans-serif;
       color: yellow;
       text-align: center;
-      overflow: hidden;
-      position: relative;
+      background: url("images/gif(1).gif") no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow-x: hidden;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 20px;
+      z-index: 5;
     }
 
     h1 {
-      margin-top: 50px;
-      font-size: 2em;
+      font-size: 5vw; /* tamaño relativo al ancho de la pantalla */
+      margin: 10px 0;
       text-shadow: 2px 2px 8px black;
     }
 
     h2 {
-      position: absolute;
-      margin-top: 40px;
-      font-size: 2em;
+      font-size: 4vw;
+      margin: 10px 0;
       text-shadow: 2px 2px 8px black;
-      top: 50px;
-      z-index: 5;
     }
 
     h3 {
-      position: absolute;
-      margin-top: 80px;
-      font-size: 2em;
+      font-size: 4vw;
+      margin: 10px 0 20px 0;
       text-shadow: 2px 2px 8px black;
-      top: 50px;
-      z-index: 5;
     }
 
     .gif-container {
-      position: absolute;
-      bottom: 80px;
       display: flex;
       justify-content: center;
       width: 100%;
-    }
-
-    .gif-container img {
-      width: 600px;
-      max-width: 90%;
+      margin-bottom: 20px;
       position: relative;
       z-index: 1;
     }
 
-    .overlay-gif {
-      position: absolute;
-      bottom: 63px;
-      width: 250px;
-      z-index: 2;
+    .gif-container img {
+      width: 80%;
+      max-width: 600px;
+      height: auto;
     }
 
-    .overlay-gif.left { left: 25%; }
-    .overlay-gif.right { right: 25%; }
+    .overlay-gif {
+      width: 30%;
+      max-width: 250px;
+      height: auto;
+      position: relative;
+      z-index: 2;
+      margin: 5px;
+    }
+
+    .overlay-gif-container {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-bottom: 20px;
+    }
 
     .side-gif {
-      position: absolute;
-      bottom: 75px;
-      width: 400px;
-      z-index: 3;
+      width: 35%;
+      max-width: 400px;
+      height: auto;
+      margin: 10px;
     }
 
-    .side-gif.left { left: 20px; }
-    .side-gif.right { right: 20px; }
+    .side-gif-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 20px;
+    }
 
     .grass {
-      position: absolute;
-      bottom: 0;
       width: 100%;
       height: 75px;
       background: linear-gradient(to top, #228B22, #32CD32);
+      flex-shrink: 0;
     }
 
-    @media (max-width: 200px) {
-      h1, h2, h3 { font-size: 21em; }
-      .gif-container img { width: 100px; }
-      .overlay-gif { width: 50px; bottom: 45px; }
-      .side-gif { width: 75px; }
-      .grass { height: 30px; }
+    /* Ajustes para móviles */
+    @media (max-width: 600px) {
+      h1 { font-size: 6vw; }
+      h2 { font-size: 5vw; }
+      h3 { font-size: 5vw; }
+
+      .gif-container img { width: 90%; }
+      .overlay-gif { width: 40%; max-width: 150px; }
+      .side-gif { width: 40%; max-width: 150px; }
+      .grass { height: 50px; }
     }
   </style>
 </head>
 <body>
-  <h1>Feliz 21 mi vida. Gracias por ser la persona que ilumina mis días</h1>
-  <h2>Aunque estemos lejos mi corazón florece cada día contigo</h2>
-  <h3>Te Amo mucho mi amor</h3>
+  <div class="content">
+    <h1>Feliz 21 mi vida. Gracias por ser la persona que ilumina mis días</h1>
+    <h2>Aunque estemos lejos mi corazón florece cada día contigo</h2>
+    <h3>Te Amo mucho mi amor</h3>
+  </div>
 
   <div class="gif-container">
     <img src="images/gif.gif" alt="Flores Amarillas">
   </div>
 
-  <img src="images/gif(6).gif" alt="Decoración" class="overlay-gif left">
-  <img src="images/gif(6).gif" alt="Decoración" class="overlay-gif right">
+  <div class="overlay-gif-container">
+    <img src="images/gif(6).gif" alt="Decoración" class="overlay-gif">
+    <img src="images/gif(6).gif" alt="Decoración" class="overlay-gif">
+  </div>
 
-  <img src="images/gif(3).gif" alt="Decoración" class="side-gif left">
-  <img src="images/gif(3).gif" alt="Decoración" class="side-gif right">
+  <div class="side-gif-container">
+    <img src="images/gif(3).gif" alt="Decoración" class="side-gif">
+    <img src="images/gif(3).gif" alt="Decoración" class="side-gif">
+  </div>
 
   <div class="grass"></div>
 </body>
 </html>
-
