@@ -33,75 +33,73 @@
     h2 { font-size: 5vw; margin: 8px 0; text-shadow: 2px 2px 8px black; }
     h3 { font-size: 5vw; margin: 8px 0 20px 0; text-shadow: 2px 2px 8px black; }
 
-    /* Contenedor de GIFs y césped en la parte inferior */
-    .bottom-container {
-      position: absolute;
-      bottom: 0;
+    /* Contenedor de GIFs superpuestos */
+    .gif-stack {
+      position: relative;
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: flex-end;
+      margin-bottom: 0px;
+    }
+
+    /* GIF central */
+    .gif-stack img.central {
+      width: 80%;
+      max-width: 300px;
+      height: auto;
       z-index: 1;
     }
 
     /* GIFs superpuestos */
-    .gif-stack {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      width: auto;
-      height: auto;
-      margin-bottom: 0px;
-    }
-
-    .gif-stack img.central {
-      width: 120px;
-      max-width: 120px;
-      height: auto;
-      z-index: 1;
-    }
-
     .gif-stack img.side {
       position: absolute;
-      width: 100px;
-      max-width: 100px;
+      width: 40%;
+      max-width: 180px;
       height: auto;
       z-index: 2;
-      bottom: 10px;
+      bottom: 20px; /* ajusta según necesites para acercar al césped */
     }
 
-    .gif-stack img.side.right { right: -40px; }
-    .gif-stack img.side.left { left: -40px; }
+    .gif-stack img.side.right {
+      right: 10%;
+    }
+
+    .gif-stack img.side.left {
+      left: 10%;
+    }
 
     .gif-stack img.overlay {
       position: absolute;
-      width: 90px;
-      max-width: 90px;
+      width: 35%;
+      max-width: 160px;
       height: auto;
       z-index: 3;
-      bottom: 20px;
+      bottom: 40px;
     }
 
-    .gif-stack img.overlay.right { right: -60px; }
-    .gif-stack img.overlay.left { left: -60px; }
+    .gif-stack img.overlay.right {
+      right: 15%;
+    }
+
+    .gif-stack img.overlay.left {
+      left: 15%;
+    }
 
     /* Césped */
     .grass {
-      position: absolute;
-      bottom: 0;
       width: 100%;
       height: 50px;
       background: linear-gradient(to top, #228B22, #32CD32);
-      z-index: 0;
+      flex-shrink: 0;
     }
 
-    /* Ajustes móviles */
+    /* Ajustes para móviles muy pequeños */
     @media (max-width: 400px) {
       h1 { font-size: 7vw; }
       h2, h3 { font-size: 6vw; }
-      .gif-stack img.central { width: 90px; max-width: 90px; }
-      .gif-stack img.side, .gif-stack img.overlay { width: 70px; max-width: 70px; }
+      .gif-stack img.central { width: 90%; max-width: 200px; }
+      .gif-stack img.side, .gif-stack img.overlay { width: 45%; max-width: 120px; }
       .grass { height: 40px; }
     }
   </style>
@@ -113,23 +111,20 @@
     <h3>Te Amo mucho mi amor</h3>
   </div>
 
-  <!-- Contenedor de GIFs y césped al fondo -->
-  <div class="bottom-container">
-    <div class="gif-stack">
-      <!-- GIF central -->
-      <img src="images/gif.gif" alt="Flores Amarillas" class="central">
+  <!-- Contenedor de GIFs superpuestos -->
+  <div class="gif-stack">
+    <!-- GIF central -->
+    <img src="images/gif.gif" alt="Flores Amarillas" class="central">
 
-      <!-- GIFs laterales (gif(3).gif) -->
-      <img src="images/gif(3).gif" alt="Decoración lateral 1" class="side left">
-      <img src="images/gif(3).gif" alt="Decoración lateral 2" class="side right">
+    <!-- GIFs laterales (gif(3).gif) -->
+    <img src="images/gif(3).gif" alt="Decoración lateral 1" class="side left">
+    <img src="images/gif(3).gif" alt="Decoración lateral 2" class="side right">
 
-      <!-- GIFs superpuestos encima (gif(6).gif) -->
-      <img src="images/gif(6).gif" alt="Decoración superpuesta 1" class="overlay left">
-      <img src="images/gif(6).gif" alt="Decoración superpuesta 2" class="overlay right">
-    </div>
-
-    <!-- Césped al fondo -->
-    <div class="grass"></div>
+    <!-- GIFs superpuestos encima (gif(6).gif) -->
+    <img src="images/gif(6).gif" alt="Decoración superpuesta 1" class="overlay left">
+    <img src="images/gif(6).gif" alt="Decoración superpuesta 2" class="overlay right">
   </div>
+
+  <div class="grass"></div>
 </body>
 </html>
