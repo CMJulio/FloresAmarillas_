@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flores Amarillas</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      background: url("images/gif(1).gif") no-repeat center center/cover;
+      font-family: "Arial", sans-serif;
+      color: yellow;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 2em;
+      text-shadow: 2px 2px 8px black;
+    }
+
+    h2 {
+      position: absolute;
+      margin-top: 40px;
+      font-size: 2em;
+      text-shadow: 2px 2px 8px black;
+      top: 50px;
+      z-index: 5;
+    }
+
+    h3 {
+      position: absolute;
+      margin-top: 80px;
+      font-size: 2em;
+      text-shadow: 2px 2px 8px black;
+      top: 50px;
+      z-index: 5;
+    }
+
+    .gif-container {
+      position: absolute;
+      bottom: 80px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .gif-container img {
+      width: 600px;
+      max-width: 90%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .overlay-gif {
+      position: absolute;
+      bottom: 63px;
+      width: 250px;
+      z-index: 2;
+    }
+
+    .overlay-gif.left { left: 25%; }
+    .overlay-gif.right { right: 25%; }
+
+    .side-gif {
+      position: absolute;
+      bottom: 75px;
+      width: 400px;
+      z-index: 3;
+    }
+
+    .side-gif.left { left: 20px; }
+    .side-gif.right { right: 20px; }
+
+    .grass {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 75px;
+      background: linear-gradient(to top, #228B22, #32CD32);
+    }
+
+    @media (max-width: 600px) {
+      h1, h2, h3 { font-size: 2em; }
+      .gif-container img { width: 300px; }
+      .overlay-gif { width: 100px; bottom: 90px; }
+      .side-gif { width: 150px; }
+      .grass { height: 60px; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Feliz 21 mi vida. Gracias por ser la persona que ilumina mis días</h1>
+  <h2>Aunque estemos lejos mi corazón florece cada día contigo</h2>
+  <h3>Te Amo mucho mi amor</h3>
+
+  <div class="gif-container">
+    <img src="images/gif.gif" alt="Flores Amarillas">
+  </div>
+
+  <img src="images/gif(6).gif" alt="Decoración" class="overlay-gif left">
+  <img src="images/gif(6).gif" alt="Decoración" class="overlay-gif right">
+
+  <img src="images/gif(3).gif" alt="Decoración" class="side-gif left">
+  <img src="images/gif(3).gif" alt="Decoración" class="side-gif right">
+
+  <div class="grass"></div>
+</body>
+</html>
