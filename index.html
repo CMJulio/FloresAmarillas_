@@ -33,20 +33,10 @@
     h2 { font-size: 5vw; margin: 8px 0; text-shadow: 2px 2px 8px black; }
     h3 { font-size: 5vw; margin: 8px 0 20px 0; text-shadow: 2px 2px 8px black; }
 
-    /* Contenedor para bajar GIFs + césped juntos */
-    .bottom-container {
-      position: absolute;
-      bottom: 20px; /* Ajusta este valor para bajarlos más o menos */
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      z-index: 1;
-    }
-
     /* Contenedor de GIFs superpuestos */
     .gif-stack {
       position: relative;
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: flex-end;
@@ -61,20 +51,24 @@
       z-index: 1;
     }
 
-    /* GIFs laterales (gif(3).gif) */
+    /* GIFs superpuestos */
     .gif-stack img.side {
       position: absolute;
       width: 40%;
       max-width: 180px;
       height: auto;
       z-index: 2;
-      bottom: 20px;
+      bottom: 20px; /* ajusta según necesites para acercar al césped */
     }
 
-    .gif-stack img.side.right { right: 10%; }
-    .gif-stack img.side.left { left: 10%; }
+    .gif-stack img.side.right {
+      right: 10%;
+    }
 
-    /* GIFs superpuestos encima (gif(6).gif) */
+    .gif-stack img.side.left {
+      left: 10%;
+    }
+
     .gif-stack img.overlay {
       position: absolute;
       width: 35%;
@@ -84,8 +78,13 @@
       bottom: 40px;
     }
 
-    .gif-stack img.overlay.right { right: 15%; }
-    .gif-stack img.overlay.left { left: 15%; }
+    .gif-stack img.overlay.right {
+      right: 15%;
+    }
+
+    .gif-stack img.overlay.left {
+      left: 15%;
+    }
 
     /* Césped */
     .grass {
@@ -96,7 +95,7 @@
     }
 
     /* Ajustes para móviles muy pequeños */
-    @media (max-width: 600px) {
+    @media (max-width: 400px) {
       h1 { font-size: 7vw; }
       h2, h3 { font-size: 6vw; }
       .gif-stack img.central { width: 90%; max-width: 200px; }
@@ -112,25 +111,20 @@
     <h3>Te Amo mucho mi amor</h3>
   </div>
 
-  <!-- Contenedor que baja GIFs y césped juntos -->
-  <div class="bottom-container">
-    <div class="gif-stack">
-      <!-- GIF central -->
-      <img src="images/gif.gif" alt="Flores Amarillas" class="central">
+  <!-- Contenedor de GIFs superpuestos -->
+  <div class="gif-stack">
+    <!-- GIF central -->
+    <img src="images/gif.gif" alt="Flores Amarillas" class="central">
 
-      <!-- GIFs laterales (gif(3).gif) -->
-      <img src="images/gif(3).gif" alt="Decoración lateral 1" class="side left">
-      <img src="images/gif(3).gif" alt="Decoración lateral 2" class="side right">
+    <!-- GIFs laterales (gif(3).gif) -->
+    <img src="images/gif(3).gif" alt="Decoración lateral 1" class="side left">
+    <img src="images/gif(3).gif" alt="Decoración lateral 2" class="side right">
 
-      <!-- GIFs superpuestos encima (gif(6).gif) -->
-      <img src="images/gif(6).gif" alt="Decoración superpuesta 1" class="overlay left">
-      <img src="images/gif(6).gif" alt="Decoración superpuesta 2" class="overlay right">
-    </div>
-
-    <!-- Césped -->
-    <div class="grass"></div>
+    <!-- GIFs superpuestos encima (gif(6).gif) -->
+    <img src="images/gif(6).gif" alt="Decoración superpuesta 1" class="overlay left">
+    <img src="images/gif(6).gif" alt="Decoración superpuesta 2" class="overlay right">
   </div>
+
+  <div class="grass"></div>
 </body>
 </html>
-
-
